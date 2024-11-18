@@ -28,6 +28,7 @@ int	main(void)
 		}
 		else
 		{
+			// aa
 			// 比較してるのが char と intだからか
 			c = '0' + digit;
 			write(1, &c, 1);
