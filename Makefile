@@ -1,5 +1,5 @@
 NAME=libftprintf
-SRCS = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c
+SRCS = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_puthex.c ft_putp.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc

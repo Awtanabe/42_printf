@@ -1,18 +1,26 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	handle_format(const char *p, va_list args, int *counter)
+void	handle_format(const char *p, va_list *args, int *counter)
 {
+	int	res;
+
 	if (*p && *p == 's')
-		ft_putstr(va_arg(args, char *), &counter);
+		ft_putstr(va_arg(*args, char *), counter);
 	else if (*p && *p == 'c')
-		ft_putchar(va_arg(args, int), &counter);
-	else if (*p && *p == 'd')
-		ft_putnbr(va_arg(args, int), &counter);
-	else if (*p && *p == 'i')
-		ft_putnbr(va_arg(args, int), &counter);
-	else if (*p)
-		ft_putchar(*p, &counter);
+	{
+		ft_putchar(va_arg(*args, int), counter);
+	}
+	else if (*p && (*p == 'd' || *p == 'i'))
+		ft_putnbr(va_arg(*args, int), counter);
+	else if (*p && *p == 'p')
+		ft_putp(va_arg(*args, unsigned long), counter);
+	else if (*p && *p == 'x')
+	{
+		res = va_arg(*args, int);
+		// printf("^^^^^res %d\n", res);
+		ft_puthex(res, counter);
+	}
 }
 
 int	ft_printf(const char *format, ...)
@@ -20,6 +28,7 @@ int	ft_printf(const char *format, ...)
 	va_list		args;
 	const char	*p = format;
 	int			counter;
+	int			val;
 
 	counter = 0;
 	va_start(args, format);
@@ -28,11 +37,13 @@ int	ft_printf(const char *format, ...)
 		if (*p == '%')
 		{
 			p++;
-			handle_format(p, args, &counter);
+			handle_format(p, &args, &counter);
 		}
 		else if (*p)
+		{
 			ft_putchar(*p, &counter);
-		++p;
+		}
+		p++;
 	}
 	va_end(args);
 	return (counter);
@@ -40,11 +51,10 @@ int	ft_printf(const char *format, ...)
 
 // int	main(void)
 // {
-// 	int	res;
-// 	int	res2;
+// 	int	i;
 
-// 	res = ft_printf(" %d ", 10);
+// 	i = 3;
+// 	printf("親 Pointer address (full): %p\n", &i);
+// 	ft_printf("%p", &i);
 // 	printf("\n");
-// 	res2 = printf(" %d ", 10);
-// 	printf("res = %d res2 = %d", res, res2);
 // }

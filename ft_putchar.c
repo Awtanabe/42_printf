@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 void	ft_putchar(char c, int *counter)
 {

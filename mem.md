@@ -1,3 +1,18 @@
+### 対応
+
+- [x]c
+- [x] s
+- [x] i d
+- [x] p putp
+- [] u
+- [] x
+- [] X
+- [] %
+
+### 16進数　マイナス
+
+https://chatgpt.com/c/673e0284-daf0-8004-952c-0799d0ba31d4
+
 ## 数字
 
 - 16進数
@@ -100,10 +115,13 @@ https://github.com/Tripouille/printfTester
 
 category: c
 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9.OK 
+
 category: s
 1.KO 2.KO 3.KO 4.KO 5.OK 6.KO 7.KO 8.KO 9.KO 10.KO 
+
 category: p
 1.KO 2.KO 3.KO 4.KO 5.KO 6.KO 7.KO 8.KO 9.KO 
+
 category: d
 1.OK 2.KO 3.OK 4.OK 5.KO 6.KO 7.KO 8.KO 9.KO 10.KO 11.KO 12.KO 13.KO 14.KO 15.KO 16.KO 17.KO 18.KO 19.KO 20.KO 21.KO 22.KO 23.KO 24.KO 25.OK 26.KO 27.KO 28.KO 29.KO 
 category: i
